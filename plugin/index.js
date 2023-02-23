@@ -1,5 +1,5 @@
 const ddPlugin = require("tailwindcss/plugin")(
-  function ({ addBase, addUtilities }) {
+  function ({ addBase, addUtilities, theme }) {
     addBase({
       ":root": {
         "--text-purple-10": "#dddddd",
@@ -12,8 +12,23 @@ const ddPlugin = require("tailwindcss/plugin")(
     });
 
     // https://github.com/tailwindlabs/tailwindcss/issues/9428
-    // We can't use @apply here, so what should be our approach?
-    addUtilities(({    
+    // We can't use @apply here, so what should be our approach? Or can we?
+    // 1st approach can be to add styles here
+    // 2nd approach can be to add tailwind classes directly in js
+    addUtilities(({
+      ".btn": {
+        "display": "flex",
+        "flex-flow": "row",
+        "justify-content": "center",
+        "gap": "0.5rem",
+        "background": theme('colors.button-primary-rest'),
+        "color": theme('colors.button-primary-foreground'),
+        "padding": "1rem 0.75rem",
+      },
+      ".btn-sm": {
+        fontSize: "0.75rem",
+        padding: "6px 12px",
+      }
     }));
   },
   {
