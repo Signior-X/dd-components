@@ -1,5 +1,5 @@
 const ddPlugin = require("tailwindcss/plugin")(
-  function ({ addBase }) {
+  function ({ addBase, addUtilities }) {
     addBase({
       ":root": {
         "--text-purple-10": "#dddddd",
@@ -10,6 +10,11 @@ const ddPlugin = require("tailwindcss/plugin")(
         "--text-purple-20": "#ff0000",
       },
     });
+
+    // https://github.com/tailwindlabs/tailwindcss/issues/9428
+    // We can't use @apply here, so what should be our approach?
+    addUtilities(({    
+    }));
   },
   {
     theme: {
