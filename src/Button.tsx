@@ -9,6 +9,6 @@ export const Button: FC<ButtonProps> = (props) => {
     const {} = props;
 
     return (
-        <button className="btn p-3" style={{ backgroundColor: "red" }}> Hello Button </button>
+        <button className="text-text-purple-10" style={{ backgroundColor: "red" }}> Hello Button </button>
     )
 }
