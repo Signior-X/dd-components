@@ -8,7 +8,7 @@ import { Button } from '../dist';
 const App = () => {
   return (
     <div>
-      <Button leftIcon={false} />
+      <Button className="btn btn-sm"> Hello </Button>
     </div>
   );
 };
